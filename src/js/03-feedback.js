@@ -4,7 +4,6 @@ const formEl = document.querySelector('.feedback-form');
 
 const LOCALSTORAGE_KEY = 'feedback-form-state';
 let formData = {};
-formData = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY));
 
 formEl.addEventListener('submit', onSubmitForm);
 
@@ -36,6 +35,7 @@ function populateTextInput() {
   if (saveMessage) {
     Object.entries(JSON.parse(saveMessage)).forEach(([name, value]) => {
       formEl.elements[name].value = value;
+      formData = JSON.parse(saveMessage);
     });
   }
 }

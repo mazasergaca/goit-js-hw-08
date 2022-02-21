@@ -35,7 +35,6 @@ function populateTextInput() {
   if (saveMessage) {
     Object.entries(JSON.parse(saveMessage)).forEach(([name, value]) => {
       formEl.elements[name].value = value;
-      formData = JSON.parse(saveMessage);
     });
   }
 }
